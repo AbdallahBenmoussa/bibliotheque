@@ -1,0 +1,51 @@
+CREATE DATABASE IF NOT EXISTS bibliotheque_db;
+USE bibliotheque_db;
+
+
+CREATE TABLE Personne (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    adresse VARCHAR(255)
+);
+
+CREATE TABLE Bibliothecaire (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    matricule INT UNIQUE NOT NULL,
+    personne_id INT,
+    FOREIGN KEY (personne_id) REFERENCES Personne(id)
+);
+
+
+CREATE TABLE Adherent (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    matricule INT UNIQUE NOT NULL,
+    date_ins DATE NOT NULL,
+    nb_emprunts_encours INT DEFAULT 0,
+    personne_id INT,
+    FOREIGN KEY (personne_id) REFERENCES Personne(id)
+);
+
+CREATE TABLE Livre (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    numero INT UNIQUE NOT NULL,
+    titre VARCHAR(255) NOT NULL,
+    auteur VARCHAR(100) NOT NULL,
+    annee_publication INT,
+    dispo BOOLEAN DEFAULT TRUE
+);
+
+
+CREATE TABLE Emprunt (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date_emprunt DATE NOT NULL,
+    date_restitution_prevue DATE NOT NULL,
+    date_restitution_effective DATE,
+    date_prolongation DATE,
+    livre_id INT,
+    adherent_id INT,
+    bibliothecaire_id INT,
+    FOREIGN KEY (livre_id) REFERENCES Livre(id),
+    FOREIGN KEY (adherent_id) REFERENCES Adherent(id),
+    FOREIGN KEY (bibliothecaire_id) REFERENCES Bibliothecaire(id)
+);

@@ -1,0 +1,71 @@
+
+.label {
+    -fx-text-fill: #3e2723;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: rgba(255, 248, 220, 0.95);
+    -fx-text-fill: #000000;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(255, 239, 190, 0.95);
+    -fx-text-fill: #000000;
+}
+
+.table-view .table-row-cell:filled:selected,
+.table-view .table-row-cell:focused:selected {
+    -fx-background-color: #bc6c25;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header, .table-view .column-header .label {
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+.table-row-cell:hover {
+    -fx-background-color: #ffe5b4;
+}
+
+.button {
+    -fx-background-color: #8b0000;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-padding: 8 20 8 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: #a52a2a;
+}
+
+.text-field {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #5d4037;
+    -fx-padding: 5 12 5 12;
+    -fx-font-size: 14px;
+    -fx-background-color: rgba(255,248,220,0.95);
+    -fx-text-fill: #3e2723;
+}
+
+.text-field:focused {
+    -fx-border-color: #bc6c25;
+    -fx-border-width: 2;
+}
+
+#Tab_GA , #Tab_GL , #Tab_GE {
+        -fx-text-fill: white;
+        -fx-font-weight: bold;
+        -fx-background-color: rgba(255,248,220,0.95);
+        -fx-background-radius: 10;
+        -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+        -fx-font-size: 14px;
+
+}
